@@ -1,17 +1,16 @@
-function App() {
-  let foodItems = ["Daal", "Roti","Ghee", "Green Vegetable", "Salad", "Milk"];
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css"
+import FoodItems from "./Components/foodItems";
+import ErrorMsg from "./Components/ErrorMsg";
 
-  return (
+
+function App() {
+  let foodItems = ["sabzi", "Roti","Ghee", "Green Vegetable", "Salad", "Milk"]; 
+return (
     <>
-      <h1>Healthy Food</h1>
-      <ul className="list-group">
-        {foodItems.map((item) => (
-          // Use `key` prop to help React identify each list item uniquely
-          <li key={item} className="list-group-item">
-            {item}
-          </li>
-        ))}
-      </ul>
+    <h1 className="heading">Healthy Food</h1>
+    <ErrorMsg items={foodItems}></ErrorMsg>
+    <FoodItems items={foodItems}></FoodItems>
     </>
   );
 }
